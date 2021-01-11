@@ -11,9 +11,12 @@ export default function CartDetail({cartItems, borrar}) {
         <div>
                 {cartItems.length == 0 ? (
                     <div style={{ margin: 'auto' }} >
-                        <span className="text-center">Necesitas agregar items al carrito <Link to="/Catalogo"><h5 className="text-danger stretched-link">ver catalogo</h5></Link> </span>
+                        <span className="text-center">Necesitas agregar items al carrito </span>
+                        <Link className="text-danger stretched-link" exact to="/Catalogo">
+                            Ver Catalogo
+                        </Link>
                     </div>) : (cartItems.map(libro =>
-                        <Row style={{ width: '30rem', margin: '25px' }}>
+                        <Row key={libro.id} style={{ width: '30rem', margin: '25px' }}>
     
                             <Col xs={4}>
                                 <img src={libro.imageUrl} style={{backgroundColor:'grey', height:'200px', width:'auto', backgroundImage:`url(${libro.imageUrl})`, backgroundPosition:'center'}} />

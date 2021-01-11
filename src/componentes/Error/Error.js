@@ -16,9 +16,9 @@ export default function Error() {
                         <Col  lg="8" >
                         <div>
                             <h1>
-                                No pudimos encontrar el Libro! 
+                                Ups! Algo salio mal
                             </h1>
-                            <h5>Probá con otro título</h5>
+                            <h5>Intenta nuevamente en unos minutos</h5>
                                
                            </div>
                         </Col>

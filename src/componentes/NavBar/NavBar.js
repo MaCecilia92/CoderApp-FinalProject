@@ -34,20 +34,36 @@ export default function NavBar() {
                         <NavDropdown title="Categorias disponibles" id="basic-nav-dropdown">
                            
                             <Link exact to="/Categories/Cuento" >
-                                <div>
+                                <div className="dropdown-item">
                                     Cuento
                                 </div>
                             </Link>
                             <Link exact to="/Categories/Novela">
-                                <div>
+                                <div className="dropdown-item">
                                     Novela
                                 </div>
                             </Link>
                             <NavDropdown.Divider />
-                            <NavDropdown.Item>Ficción</NavDropdown.Item>
-                                <NavDropdown.Item>Policial</NavDropdown.Item>
-                                <NavDropdown.Item>Terror</NavDropdown.Item>
-                                <NavDropdown.Item>Romantica</NavDropdown.Item>
+                            <Link exact to="/Categories/Ficcion" >
+                                <div className="dropdown-item">
+                                    Ficción
+                                </div>
+                            </Link>
+                            <Link exact to="/Categories/Policial" >
+                                <div className="dropdown-item">
+                                    Policial
+                                </div>
+                            </Link>
+                            <Link exact to="/Categories/Terror" >
+                                <div className="dropdown-item">
+                                    Terror
+                                </div>
+                            </Link>
+                            <Link exact to="/Categories/Romantica" >
+                                <div className="dropdown-item">
+                                    Romantica
+                                </div>
+                            </Link>
                             </NavDropdown>
                     </Nav>
                     <NavLink to='/Cart'>

@@ -15,7 +15,7 @@ export default function Category({books, isLoading}) {
             { books.length == 0 ? (
                 <Loader/>
             ) : (books.map(book =>
-                <Card key={book.id} style={{ width: '19rem', margin: '4px' }}>
+                <Card key={book.id} style={{ width: '19rem', height:'36rem', margin: '4px' }}>
                     <img src={book.imageUrl} style={{backgroundColor:'grey', height:'450px', width:'auto', backgroundImage:`url(${book.imageUrl})`, backgroundPosition:'center'}} />
                        
                     <div className="CardCustom">
@@ -30,7 +30,7 @@ export default function Category({books, isLoading}) {
                         </Card.Body>
                         <Card.Text className="CardFooter">
                             <Link to={`/item/${book.id}`}>
-                                <Button variant="light" style={{ width: 'auto', height:'8rem' }}>
+                                <Button variant="light" style={{ width: 'auto', height:'7.7rem' }}>
                                 <img className="detailButton"  src={Detail} alt="Detail-button" /> 
                                 </Button>
                             </Link> 

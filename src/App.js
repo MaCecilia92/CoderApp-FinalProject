@@ -24,7 +24,7 @@ function App() {
           <Route path='/item/:id' render={() => <ItemDetailContainer />} />
           <Route path='/Cart' render={() => <CartContainer />} />
           <Route path='/Categories/:categoryKey' render={() => <CategoryContainer />} />
-          <Route path='/Checkout' render={()=><CategoryContainer/>}/>
+          <Route path='/Checkout' render={()=><CheckOutContainer/>}/>
         </Switch>
     <Footer/>  
     </BrowserRouter>
