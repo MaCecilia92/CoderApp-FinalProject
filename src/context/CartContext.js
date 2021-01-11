@@ -45,10 +45,14 @@ export const CartProvider = ({ value = [] , children }) => {
 
   }
 
-  
+  function borrarTodo () {
+    setCartItems([]);
+    setCount(0);
+    setBuyPrice(0);
+  }
 
   return (
-    <CartContext.Provider value={{ count, add, cartItems, isLoading, setLoading, borrar, buyPrice}}>
+    <CartContext.Provider value={{ count, add, cartItems, isLoading, setLoading, borrar, buyPrice, borrarTodo, setCartItems,setCount, setBuyPrice}}>
       {children}
     </CartContext.Provider>
   );

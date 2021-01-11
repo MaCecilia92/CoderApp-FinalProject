@@ -2,10 +2,11 @@ import React, {useState, useEffect} from 'react';
 import { useForm } from "react-hook-form";
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
+import { Link } from 'react-router-dom';
 
 import './Checkout.css'
 
-export default function Checkout({onSubmit, orderId, submittedData}) {
+export default function Checkout({onSubmit, orderId, submittedData, borrarTodo, cartItems, count, buyprice}) {
 
         const { register, handleSubmit, errors, getValues, formState, reset } = useForm({
             mode:"onBlur",
@@ -149,7 +150,6 @@ export default function Checkout({onSubmit, orderId, submittedData}) {
                     </div>
 
                     <Button type="submit" className="btn btn-primary btn-lg btn-block" disabled={!formState.isValid} onClick={handleShow} >Realizar compra</Button>
-                    
             </form>
                     <Modal show={show} onHide={handleClose} animation={false}>
                         <Modal.Header closeButton>
@@ -159,9 +159,12 @@ export default function Checkout({onSubmit, orderId, submittedData}) {
                         </Modal.Header>
                             <Modal.Body><h3>ID: {orderId }</h3></Modal.Body>
                         <Modal.Footer>
-                            <Button variant="success" onClick={handleClose}>
-                                Close
-                            </Button>                
+                        <Link exact to="/Catalogo">
+                            <Button variant="success" onClick={()=>borrarTodo()}>
+                                        Close
+                            </Button> 
+                        </Link>
+                                           
                         </Modal.Footer>
                     </Modal>
        </div>

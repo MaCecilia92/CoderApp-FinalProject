@@ -11,7 +11,7 @@ export default function CheckOutContainer() {
 
     const [orderId, setOrderId] = useState('');
 
-    const { cartItems, buyPrice, setLoading } = useCartContext();
+    const { cartItems, buyPrice, setLoading, borrarTodo, setCartItems, setBuyPrice } = useCartContext();
 
     const [submittedData, setSubmittedData] = useState({});
 
@@ -53,7 +53,7 @@ export default function CheckOutContainer() {
 
         };
         console.log('order', newOrder)
-        orders.add(newOrder).then(({id})=>{
+        orders.add(newOrder).then(({ id }) => {
             setOrderId(id)
         }).catch(err => {
             throw err;
@@ -61,15 +61,13 @@ export default function CheckOutContainer() {
             setLoading(false)
         )
 
-        console.log('buyer', newOrder);
-        console.log('orderId', orderId)
 };
     return (
         <div  >
             {cartItems.length === 0 ? (<Error />) : (
                 <div className="ContainerCustom">
-                    <CheckoutForm onSubmit={onSubmit} orderId={orderId} submittedData={submittedData }/> 
-                    <CheckoutCart cartItems={cartItems} buyPrice={buyPrice} />
+                    <CheckoutForm onSubmit={onSubmit} orderId={orderId} submittedData={submittedData } borrarTodo={borrarTodo}/> 
+                    <CheckoutCart cartItems={cartItems} buyPrice={buyPrice}/>
                 </div>
             )}
             
