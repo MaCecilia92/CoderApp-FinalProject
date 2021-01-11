@@ -1,0 +1,21 @@
+.categoriesCustom {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.categoriesBadges {
+  margin-left: 5px;
+}
+
+.ItemPrice {
+  display: flex;
+  flex-direction: row;
+  font-size: 3rem;
+  justify-content: center;
+  align-items: center;
+}
+
+div.ItemPrice h5 {
+  margin-right: 10px;
+}

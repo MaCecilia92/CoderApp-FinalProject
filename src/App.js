@@ -1,24 +1,34 @@
-import logo from './logo.svg';
+import React from 'react';
+import NavBar from './componentes/NavBar/NavBar';
+import HomeContainer from './containers/HomeContainer';
+import ItemListContainer from './containers/ItemListContainer';
+import Footer from './componentes/Footer/Footer';
+import ItemDetailContainer from './containers/ItemDetailContainer';
+import CartContainer from './containers/CartContainer';
+import CategoryContainer from './containers/CategoryContainer';
+import CheckOutContainer from './containers/CheckOutContainer';
+
+
+import { CartProvider } from "./context/CartContext";
+import {BrowserRouter, Switch, Route} from 'react-router-dom';
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <CartProvider>
+    <BrowserRouter>
+    <NavBar/>
+        <Switch>
+          <Route exact path='/' render={() => <HomeContainer />} />
+          <Route path='/Catalogo' render={() => <ItemListContainer />} />
+          <Route path='/item/:id' render={() => <ItemDetailContainer />} />
+          <Route path='/Cart' render={() => <CartContainer />} />
+          <Route path='/Categories/:categoryKey' render={() => <CategoryContainer />} />
+          <Route path='/Checkout' render={()=><CategoryContainer/>}/>
+        </Switch>
+    <Footer/>  
+    </BrowserRouter>
+    </CartProvider>
   );
 }
 

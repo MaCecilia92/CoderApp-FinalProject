@@ -1,0 +1,15 @@
+.CardFooter {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.detailButton {
+  width: 30px;
+  height: auto;
+}
+
+.CardCustom {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 0;
+}

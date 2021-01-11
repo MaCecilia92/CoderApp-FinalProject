@@ -1,0 +1,14 @@
+.CardHorizontal {
+  display: flex;
+  flex-direction: row;
+}
+
+.borrarItem {
+  width: 30px;
+  height: auto;
+}
+
+.orderButton {
+  width: 50px;
+  height: auto;
+}

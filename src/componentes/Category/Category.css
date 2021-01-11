@@ -1,0 +1,10 @@
+.ContainerCustom {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  margin-top: 10px;
+  margin-bottom: 40px;
+  min-height: 100vh;
+  position: relative;
+}
